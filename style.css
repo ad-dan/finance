@@ -6,3 +6,6 @@ svg {
 .navbar-brand {
   padding-left: 1rem;
 }
+img {
+  border-radius: 0.25rem;
+}
