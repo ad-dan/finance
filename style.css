@@ -9,3 +9,10 @@ svg {
 img {
   border-radius: 0.25rem;
 }
+.log {
+  height: 300px;
+  width: 100%;
+}
+.form-item{
+  margin: 1rem 0;
+}
