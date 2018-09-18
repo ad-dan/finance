@@ -16,3 +16,6 @@ img {
 .form-item{
   margin: 1rem 0;
 }
+.navbar {
+  border-bottom: 1px solid #00D1B2;
+}
