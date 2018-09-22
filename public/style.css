@@ -30,3 +30,13 @@ img {
   background: linear-gradient(-45deg, #a6ffcb, #12d8fa, #1fa2ff);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.clickable {
+  cursor: pointer;
+}
+a:visited {
+  color: inherit;
+}
+.is-dec {
+  background: linear-gradient(rgba(31, 162, 255, 0.4), rgba(166, 255, 203, 0.4)),
+    url(./bg.png);
+}
