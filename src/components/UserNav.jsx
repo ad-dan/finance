@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => (
+const UserNav = ({ out }) => (
   <div class="navbar navy">
     <div class="navbar-brand">
       <div class="level">
@@ -36,12 +36,14 @@ const Navbar = () => (
           </p>
           <p class="control">
             <div class=" button is-success is-inverted is-rounded">
-              <Link to="/login">Login</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </div>
           </p>
           <p class="control">
-            <div class=" button is-primary is-inverted is-rounded">
-              <Link to="/register">Register</Link>
+            <div
+              onClick={out}
+              class=" button is-primary is-inverted is-rounded">
+              Register
             </div>
           </p>
         </div>
@@ -50,4 +52,4 @@ const Navbar = () => (
   </div>
 );
 
-export default Navbar;
+export default UserNav;
