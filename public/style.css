@@ -16,6 +16,17 @@ img {
 .form-item {
   margin: 1rem 0;
 }
+.money {
+  border-width: 0px !important;
+}
+.money:hover {
+  cursor: default;
+  border: none;
+  outline: none;
+}
+.money:active {
+  outline: none;
+}
 .navy {
   /*
     https://uigradients.com/#Stripe

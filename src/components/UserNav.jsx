@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UserNav = ({ out }) => (
+const UserNav = ({ out, money }) => (
   <div class="navbar navy">
     <div class="navbar-brand">
       <div class="level">
@@ -27,6 +27,15 @@ const UserNav = ({ out }) => (
       </div>
     </div>
     <div class="navbar-menu ">
+      <div className="navbar-start">
+        <div className="navbar-item field">
+          <p className="control">
+            <span className="tag is-medium is-white has-text-info">
+              {`$${money.toFixed(2)}`}
+            </span>
+          </p>
+        </div>
+      </div>
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
@@ -43,7 +52,7 @@ const UserNav = ({ out }) => (
             <div
               onClick={out}
               class=" button is-primary is-inverted is-rounded">
-              Register
+              Logout
             </div>
           </p>
         </div>

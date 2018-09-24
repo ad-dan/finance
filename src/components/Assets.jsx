@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Assets = ({ user }) => {
+const Assets = ({ user, sell }) => {
   if (!user.portfolio.length) {
     return (
       <div className="section">
@@ -25,15 +25,19 @@ const Assets = ({ user }) => {
         <td>{stock.amount}</td>
         <td className={isBull ? 'has-text-success' : 'has-text-danger'}>{`${
           isBull ? '+' : '-'
-        }${change}%`}</td>
+        }${change.toFixed(3)}%`}</td>
         <td className={isBull ? 'has-text-success' : 'has-text-danger'}>
-          {net}
+          {net.toFixed(2)}
         </td>
         <td>
           <div
-            className={`button is-small ${
-              isBull ? 'is-success' : 'is-danger'
-            }`}>
+            className={`button is-small ${isBull ? 'is-success' : 'is-danger'}`}
+            onClick={() =>
+              sell({
+                price: net,
+                sym: stock.sym
+              })
+            }>
             Sell
           </div>
         </td>

@@ -45,6 +45,7 @@ class SearchPage extends Component {
     }
   };
   render() {
+    const cost = this.state.stock.price * this.state.count;
     return (
       <div>
         <div class="section">
@@ -111,7 +112,7 @@ class SearchPage extends Component {
             </div>
           </div>
         </div>
-        {this.state.stockFound ? (
+        {this.state.stockFound && this.props.logged ? (
           <div className="section">
             <div className="level">
               <div className="level-item">
@@ -131,7 +132,28 @@ class SearchPage extends Component {
             </div>
             <div className="level">
               <div className="level-item">
-                <button className="button is-medium is-info">Buy</button>
+                <span
+                  className={`tag is-large ${
+                    cost > this.props.balance ? 'is-danger' : 'is-info'
+                  }`}>
+                  Cost: {cost.toFixed(2)}
+                </span>
+              </div>
+            </div>
+            <div className="level">
+              <div className="level-item">
+                <button
+                  className="button is-medium is-info"
+                  disabled={this.state.count == 0 || cost > this.props.balance}
+                  onClick={() => {
+                    this.props.buy({
+                      price: cost,
+                      amount: this.state.count,
+                      sym: this.state.sym
+                    });
+                  }}>
+                  Buy
+                </button>
               </div>
             </div>
           </div>

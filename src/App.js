@@ -165,6 +165,33 @@ class App extends Component {
     };
     return newUser;
   };
+  buyStock = ({ price, amount, sym }) => {
+    const { current, database } = this.state;
+    current.balance -= price;
+    const stock = {
+      sym,
+      name: this.state.stocks[sym][0],
+      amount,
+      value: price
+    };
+    current.portfolio.push(stock);
+    database[current.name] = current;
+    this.setState({
+      current,
+      database
+    });
+  };
+  sellStock = ({ price, sym }) => {
+    const { current, database } = this.state;
+    current.balance += price;
+    const index = current.portfolio.findIndex(stock => stock.sym === sym);
+    current.portfolio.splice(index, 1);
+    database[current.name] = current;
+    this.setState({
+      current,
+      database
+    });
+  };
   loginUser = ({ name, pass }) => {
     const current = this.state.database[name];
     console.table(current);
@@ -183,16 +210,24 @@ class App extends Component {
   };
   userExists = name => !!this.state.users[name];
   isValidStock = sym => !!this.state.stocks[sym];
+  componentDidUpdate() {
+    localStorage.setItem('database', JSON.stringify(this.state.database));
+    localStorage.setItem('users', JSON.stringify(this.state.users));
+  }
   render() {
     return (
       <Router>
         <div>
-          {this.state.logged ? <UserNav out={this.logoutUser} /> : <Navbar />}
+          {this.state.logged ? (
+            <UserNav out={this.logoutUser} money={this.state.current.balance} />
+          ) : (
+            <Navbar />
+          )}
           <Route
             path="/dashboard"
             component={() =>
               this.state.logged ? (
-                <Assets user={this.state.current} />
+                <Assets user={this.state.current} sell={this.sellStock} />
               ) : (
                 <LandingHero />
               )
@@ -225,8 +260,11 @@ class App extends Component {
             path="/search"
             component={() => (
               <SearchPage
+                buy={this.buyStock}
                 validCheck={this.isValidStock}
                 getStock={this.getStock}
+                logged={this.state.logged}
+                balance={this.state.current.balance}
               />
             )}
           />
