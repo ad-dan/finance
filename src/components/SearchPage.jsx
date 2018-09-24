@@ -5,9 +5,23 @@ class SearchPage extends Component {
     super(props);
     this.state = {
       sym: '',
-      stock: {}
+      stock: {},
+      stockFound: false,
+      count: 0
     };
   }
+  incrCount = () => {
+    const count = this.state.count + 1;
+    this.setState({
+      count
+    });
+  };
+  decrCount = () => {
+    const count = this.state.count - 1;
+    this.setState({
+      count
+    });
+  };
   check = sym => this.props.validCheck(sym);
   broker = sym => this.props.getStock(sym);
   changeVal = e => {
@@ -18,13 +32,15 @@ class SearchPage extends Component {
       if (stock) {
         this.setState({
           sym: symbol,
-          stock
+          stock,
+          stockFound: true
         });
       }
     } else {
       this.setState({
         sym: symbol,
-        stock: {}
+        stock: {},
+        stockFound: false
       });
     }
   };
@@ -95,6 +111,31 @@ class SearchPage extends Component {
             </div>
           </div>
         </div>
+        {this.state.stockFound ? (
+          <div className="section">
+            <div className="level">
+              <div className="level-item">
+                <button
+                  className="button is-small"
+                  onClick={this.decrCount}
+                  disabled={this.state.count == 0}>
+                  {' '}
+                  -{' '}
+                </button>
+                <span> {this.state.count} </span>
+                <button className=" button is-small" onClick={this.incrCount}>
+                  {' '}
+                  +{' '}
+                </button>
+              </div>
+            </div>
+            <div className="level">
+              <div className="level-item">
+                <button className="button is-medium is-info">Buy</button>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }

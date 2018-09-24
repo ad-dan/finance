@@ -167,6 +167,7 @@ class App extends Component {
   };
   loginUser = ({ name, pass }) => {
     const current = this.state.database[name];
+    console.table(current);
     this.setState({
       current,
       logged: true
@@ -189,14 +190,20 @@ class App extends Component {
           {this.state.logged ? <UserNav out={this.logoutUser} /> : <Navbar />}
           <Route
             path="/dashboard"
-            component={() => (this.state.logged ? <Assets /> : <LandingHero />)}
+            component={() =>
+              this.state.logged ? (
+                <Assets user={this.state.current} />
+              ) : (
+                <LandingHero />
+              )
+            }
           />
           <Route exact path="/" component={LandingHero} />
           <Route
             path="/login"
             render={() =>
               this.state.logged ? (
-                <Redirect to="/dashboard" />
+                <Redirect to="/dashboard" user={this.state.current} />
               ) : (
                 <div>
                   <LandingHero />
