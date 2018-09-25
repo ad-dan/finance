@@ -228,7 +228,7 @@ class App extends Component {
             <Navbar />
           )}
           <Route
-            path="/dashboard"
+            path={`${process.env.PUBLIC_URL}/dashboard`}
             component={() =>
               this.state.logged ? (
                 <Assets user={this.state.current} sell={this.sellStock} />
@@ -237,12 +237,19 @@ class App extends Component {
               )
             }
           />
-          <Route exact path="/" component={LandingHero} />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/`}
+            component={LandingHero}
+          />
           <Route
             path="/login"
             render={() =>
               this.state.logged ? (
-                <Redirect to="/dashboard" user={this.state.current} />
+                <Redirect
+                  to={`${process.env.PUBLIC_URL}/dashboard`}
+                  user={this.state.current}
+                />
               ) : (
                 <div>
                   <LandingHero />
@@ -255,13 +262,13 @@ class App extends Component {
             }
           />
           <Route
-            path="/register"
+            path={`${process.env.PUBLIC_URL}/register`}
             component={() => (
               <RegPage validCheck={this.userExists} regUser={this.regUser} />
             )}
           />
           <Route
-            path="/search"
+            path={`${process.env.PUBLIC_URL}/search`}
             component={() => (
               <SearchPage
                 buy={this.buyStock}

@@ -100,7 +100,7 @@ class RegPage extends React.Component {
             </div>
           )}
         </div>
-        <Link to="/">
+        <Link to={`${process.env.PUBLIC_URL}/`}>
           <button className="modal-close" />
         </Link>
       </div>

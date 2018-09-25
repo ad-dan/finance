@@ -6,7 +6,7 @@ const Navbar = () => (
     <div class="navbar-brand">
       <div class="level">
         <div class="level-item">
-          <Link to="/">
+          <Link to={`${process.env.PUBLIC_URL}/`}>
             <div className="level">
               <div className="level-item">
                 <svg
@@ -30,19 +30,19 @@ const Navbar = () => (
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
-            <Link to="search">
+            <Link to={`${process.env.PUBLIC_URL}search`}>
               <div class=" button is-primary is-inverted is-rounded">
                 Search{' '}
               </div>{' '}
             </Link>
           </p>
           <p class="control">
-            <Link to="/login">
+            <Link to={`${process.env.PUBLIC_URL}/login`}>
               <div class=" button is-success is-inverted is-rounded">Login</div>
             </Link>
           </p>
           <p class="control">
-            <Link to="/register">
+            <Link to={`${process.env.PUBLIC_URL}/register`}>
               <div class=" button is-primary is-inverted is-rounded">
                 Register
               </div>

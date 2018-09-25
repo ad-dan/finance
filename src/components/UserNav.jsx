@@ -6,7 +6,7 @@ const UserNav = ({ out, money }) => (
     <div class="navbar-brand">
       <div class="level">
         <div class="level-item">
-          <Link to="/">
+          <Link to={`${process.env.PUBLIC_URL}/`}>
             <div className="level">
               <div className="level-item">
                 <svg
@@ -39,14 +39,14 @@ const UserNav = ({ out, money }) => (
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
-            <Link to="search">
+            <Link to={`${process.env.PUBLIC_URL}search`}>
               <div class=" button is-primary is-inverted is-rounded">
                 Search{' '}
               </div>
             </Link>
           </p>
           <p class="control">
-            <Link to="/dashboard">
+            <Link to={`${process.env.PUBLIC_URL}/dashboard`}>
               <div class=" button is-success is-inverted is-rounded">
                 Dashboard
               </div>
