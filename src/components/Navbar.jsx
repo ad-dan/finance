@@ -30,19 +30,23 @@ const Navbar = () => (
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
-            <div class=" button is-primary is-inverted is-rounded">
-              <Link to="search">Search </Link>
-            </div>
+            <Link to="search">
+              <div class=" button is-primary is-inverted is-rounded">
+                Search{' '}
+              </div>{' '}
+            </Link>
           </p>
           <p class="control">
-            <div class=" button is-success is-inverted is-rounded">
-              <Link to="/login">Login</Link>
-            </div>
+            <Link to="/login">
+              <div class=" button is-success is-inverted is-rounded">Login</div>
+            </Link>
           </p>
           <p class="control">
-            <div class=" button is-primary is-inverted is-rounded">
-              <Link to="/register">Register</Link>
-            </div>
+            <Link to="/register">
+              <div class=" button is-primary is-inverted is-rounded">
+                Register
+              </div>
+            </Link>
           </p>
         </div>
       </div>

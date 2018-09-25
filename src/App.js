@@ -13,7 +13,11 @@ import SearchPage from './components/SearchPage';
 import RegPage from './components/RegPage';
 import Assets from './components/Assets';
 import UserNav from './components/UserNav';
-
+/*
+  TODO:
+    https://www.marketwatch.com/tools/industry/stocklist.asp?bcind_ind=9535&bcind_period=3mo
+    https://www.barchart.com/stocks/top-100-stocks
+*/
 class App extends Component {
   constructor() {
     super();
@@ -119,8 +123,8 @@ class App extends Component {
       NKE: ['Nike Cl B', '85.37'],
       RIO: ['Rio Tinto ADR', '51.15']
     };
-    const users = localStorage.getItem('users') || {};
-    const database = localStorage.getItem('database') || {};
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+    const database = JSON.parse(localStorage.getItem('database')) || {};
     this.state = {
       stocks,
       users,

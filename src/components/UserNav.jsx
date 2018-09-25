@@ -39,14 +39,18 @@ const UserNav = ({ out, money }) => (
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
-            <div class=" button is-primary is-inverted is-rounded">
-              <Link to="search">Search </Link>
-            </div>
+            <Link to="search">
+              <div class=" button is-primary is-inverted is-rounded">
+                Search{' '}
+              </div>
+            </Link>
           </p>
           <p class="control">
-            <div class=" button is-success is-inverted is-rounded">
-              <Link to="/dashboard">Dashboard</Link>
-            </div>
+            <Link to="/dashboard">
+              <div class=" button is-success is-inverted is-rounded">
+                Dashboard
+              </div>
+            </Link>
           </p>
           <p class="control">
             <div
