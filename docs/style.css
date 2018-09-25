@@ -1,0 +1,53 @@
+svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff !important;
+}
+.navbar-brand {
+  padding-left: 1rem;
+}
+img {
+  border-radius: 0.25rem;
+}
+.log {
+  height: 300px;
+  width: 100%;
+}
+.form-item {
+  margin: 1rem 0;
+}
+.money {
+  border-width: 0px !important;
+}
+.money:hover {
+  cursor: default;
+  border: none;
+  outline: none;
+}
+.money:active {
+  outline: none;
+}
+.navy {
+  /*
+    https://uigradients.com/#Stripe
+  */
+  background: #1fa2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #a6ffcb,
+    #12d8fa,
+    #1fa2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(-45deg, #a6ffcb, #12d8fa, #1fa2ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.clickable {
+  cursor: pointer;
+}
+a:visited {
+  color: inherit;
+}
+.is-dec {
+  background: linear-gradient(rgba(31, 162, 255, 0.4), rgba(166, 255, 203, 0.4)),
+    url(./bg.png);
+}
