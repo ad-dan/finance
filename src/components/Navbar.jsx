@@ -30,7 +30,7 @@ const Navbar = () => (
       <div class="navbar-end">
         <div class="navbar-item field is-grouped">
           <p class="control">
-            <Link to={`${process.env.PUBLIC_URL}search`}>
+            <Link to={`${process.env.PUBLIC_URL}/search`}>
               <div class=" button is-primary is-inverted is-rounded">
                 Search{' '}
               </div>{' '}

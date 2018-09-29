@@ -4,7 +4,7 @@ import Movies from './Movies';
 
 const LandingHero = () => (
   <div>
-    <div class="hero is-dec is-large">
+    <div class="hero cd is-large">
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="title has-text-white">Welcome to Mercury Finance</div>

@@ -221,7 +221,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="is-dec">
           {this.state.logged ? (
             <UserNav out={this.logoutUser} money={this.state.current.balance} />
           ) : (

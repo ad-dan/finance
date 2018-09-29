@@ -47,7 +47,7 @@ class SearchPage extends Component {
   render() {
     const cost = this.state.stock.price * this.state.count;
     return (
-      <div>
+      <div className="has-background-white">
         <div class="section">
           <div class="level">
             <div class="level-item">

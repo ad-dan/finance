@@ -2,7 +2,7 @@ import React from 'react';
 
 const Eli5 = () => (
   <div>
-    <div class="section">
+    <div class="section cd">
       <div class="container box">
         <div class="title has-text-centered">Ad, What's the stock market ?</div>
         <div>
