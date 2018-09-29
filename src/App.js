@@ -243,7 +243,7 @@ class App extends Component {
             component={LandingHero}
           />
           <Route
-            path="/login"
+            path={`${process.env.PUBLIC_URL}/login`}
             render={() =>
               this.state.logged ? (
                 <Redirect
