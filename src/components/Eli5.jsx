@@ -29,7 +29,7 @@ const Eli5 = () => (
       <div class="container">
         <div class="tile is-ancestor">
           <div class="tile is-parent">
-            <div class="tile is-child notification is-primary">
+            <div class="tile is-child notification is-info">
               <div class="title">But why?</div>
               <div>
                 As with so many other things, stock makes perfect sense if you
