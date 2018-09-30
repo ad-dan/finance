@@ -19,38 +19,46 @@ class Assets extends React.Component {
         </div>
       );
     }
-    setTimeout(() => {
-      const { Chartist } = window;
-      new Chartist.Pie('.ct-chart-pie', {
-        labels: user.portfolio.map(stock => stock.sym),
-        series: user.portfolio.map(stock => stock.value.toFixed(0))
-      });
-    }, 0);
-    const data = user.portfolio.map(stock => {
+    const stocks = user.portfolio.map(stock => {
       const change = 0.001 * Math.floor(Math.random() * 100);
       const isBull = Math.random() >= 0.5;
       const net = isBull
         ? stock.value + stock.value * change
         : stock.value - stock.value * change;
+      stock.change = change;
+      stock.value = net;
+      stock.isBull = isBull;
+      return stock;
+    });
+    setTimeout(() => {
+      const { Chartist } = window;
+
+      new Chartist.Pie('.ct-chart-pie', {
+        labels: stocks.map(stock => stock.sym),
+        series: stocks.map(stock => stock.value.toFixed(0))
+      });
+    }, 0);
+    const data = stocks.map(stock => {
       return (
         <tr>
           <td>{stock.sym}</td>
           <td>{stock.name}</td>
           <td>{stock.amount}</td>
-          <td className={isBull ? 'has-text-success' : 'has-text-danger'}>{`${
-            isBull ? '+' : '-'
-          }${change.toFixed(3)}%`}</td>
-          <td className={isBull ? 'has-text-success' : 'has-text-danger'}>
-            {net.toFixed(2)}
+          <td
+            className={
+              stock.isBull ? 'has-text-success' : 'has-text-danger'
+            }>{`${stock.isBull ? '+' : '-'}${stock.change.toFixed(3)}%`}</td>
+          <td className={stock.isBull ? 'has-text-success' : 'has-text-danger'}>
+            {stock.value.toFixed(2)}
           </td>
           <td>
             <div
               className={`button is-small ${
-                isBull ? 'is-success' : 'is-danger'
+                stock.isBull ? 'is-success' : 'is-danger'
               }`}
               onClick={() =>
                 sell({
-                  price: net,
+                  price: stock.value,
                   sym: stock.sym
                 })
               }>

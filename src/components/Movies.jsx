@@ -7,7 +7,7 @@ const Movies = () => (
         <div className="container has-text-centered">
           <div className="level">
             <div className="level-item title has-text-white">
-              Our Recommended Watchs
+              Our recommended watchs
             </div>
           </div>
         </div>

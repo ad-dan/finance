@@ -264,7 +264,10 @@ class App extends Component {
           <Route
             path={`${process.env.PUBLIC_URL}/register`}
             component={() => (
-              <RegPage validCheck={this.userExists} regUser={this.regUser} />
+              <div>
+                <LandingHero />
+                <RegPage validCheck={this.userExists} regUser={this.regUser} />
+              </div>
             )}
           />
           <Route
