@@ -22,7 +22,7 @@ class App extends Component {
   constructor() {
     super();
     const stocks = JSON.parse(localStorage.getItem('stocks')) || {
-      GE: ['General Electric', '$12.46'],
+      GE: ['General Electric', '12.46'],
       BAC: ['Bank of America', '31.19'],
       F: ['Ford Motor', '9.81'],
       NIO: ['NIO ADR', '8.78'],
@@ -279,6 +279,7 @@ class App extends Component {
                 getStock={this.getStock}
                 logged={this.state.logged}
                 balance={this.state.current.balance}
+                stocks={this.state.stocks}
               />
             )}
           />

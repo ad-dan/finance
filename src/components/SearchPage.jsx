@@ -44,7 +44,29 @@ class SearchPage extends Component {
       });
     }
   };
+  handleClick = sym => {
+    const stock = this.broker(sym);
+    this.setState({
+      sym,
+      stock,
+      stockFound: true
+    });
+  };
   render() {
+    const keys = Object.keys(this.props.stocks);
+    const stockTable = keys.map(key => {
+      const func = () => this.handleClick(key);
+      return (
+        <tr
+          className={
+            'clickable ' + (key === this.state.sym ? 'is-selected' : '')
+          }
+          onClick={func}>
+          <td>{key}</td>
+          <td>{this.props.stocks[key][0]}</td>
+        </tr>
+      );
+    });
     const cost = this.state.stock.price * this.state.count;
     return (
       <div className="has-background-white">
@@ -158,6 +180,21 @@ class SearchPage extends Component {
             </div>
           </div>
         ) : null}
+        <div className="section">
+          <div className="level">
+            <div className="level-item has-text-centered">
+              <table className="table is-hoverable is-striped">
+                <tbody>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Company</th>
+                  </tr>
+                  {stockTable}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
