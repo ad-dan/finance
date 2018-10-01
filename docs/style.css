@@ -121,3 +121,9 @@ a:visited {
 .ct-chart-pie {
   height: 15rem;
 }
+#drop {
+  justify-content: space-around;
+}
+#logo {
+  transform: translateY(0.5rem);
+}
