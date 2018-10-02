@@ -121,7 +121,8 @@ class App extends Component {
       UNP: ['Union Pacific', '164.01'],
       MPC: ['Marathon Petroleum', '81.93'],
       NKE: ['Nike Cl B', '85.37'],
-      RIO: ['Rio Tinto ADR', '51.15']
+      RIO: ['Rio Tinto ADR', '51.15'],
+      HDB: ['HDFC Bank Limited', '93.61']
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
