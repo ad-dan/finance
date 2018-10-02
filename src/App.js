@@ -139,7 +139,20 @@ class App extends Component {
       TYO: ['Tokyo Stock Exchange', '24.77'],
       NZE: ['New Zealand Exchange', '0.66'],
       MSFT: ['Microsoft Corporation', '115.61'],
-      TL0: ['Tesla Inc', '310.345']
+      TL0: ['Tesla Inc', '310.345'],
+      KBT: ['K3 Business Technology Group','242.50'], //new
+      K3C: ['K3 Capital Group','291.00'],
+      KNOS: ['Kainos Group','425.00'],
+      KAPE: ['Kape Technologies','126.50'],
+      KDR: ['Karelian Diamond Resource','4.55'],
+      KAT: ['Katoro Gold Mining','1.20'],
+      KAV: ['Kavango Resources Ord 0.1p','2.55'],
+      KAZ: ['Kaz Minerals','537.40'],
+      KZG: ['Kazera Global Ord 1p','2.25'],
+      KCOM: ['KCOM Group','94.25'],
+      KCR: ['KCR Residential Reit','74.50'],
+      BME: ['B&M European Value Retail','74.50']
+      
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
