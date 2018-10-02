@@ -134,7 +134,12 @@ class App extends Component {
       KZG: ['Kazera Global Ord 1p','2.25'],
       KCOM: ['KCOM Group','94.25'],
       KCR: ['KCR Residential Reit','74.50'],
-      BME: ['B&M European Value Retail','74.50']
+      BME: ['B&M European Value Retail','74.50'],
+      HDB: ['HDFC Bank Limited', '93.61'],
+      TYO: ['Tokyo Stock Exchange', '24.77'],
+      NZE: ['New Zealand Exchange', '0.66'],
+      MSFT: ['Microsoft Corporation', '115.61'],
+      TL0: ['Tesla Inc', '310.345']
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
