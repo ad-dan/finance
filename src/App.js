@@ -139,7 +139,21 @@ class App extends Component {
       TYO: ['Tokyo Stock Exchange', '24.77'],
       NZE: ['New Zealand Exchange', '0.66'],
       MSFT: ['Microsoft Corporation', '115.61'],
-      TL0: ['Tesla Inc', '310.345']
+      TL0: ['Tesla Inc', '310.345'],
+
+      YESBANK: ['Yes Bank', '199.85'],
+      TCS: ['Tata Consultancy Services', '2250.30'],
+      TATAMOTORS: ['Tata Motors', '229.70'],
+      HDFCBANK: ['HDFC Bank Limited', '2039.90'],
+      EICHERMOT: ['Eicher Motors', '24,839.90'],
+      WIPRO: ['Wipro', '330.70'],
+      AXISBANK: ['Axis Bank Limited', '592.75'],
+      RELIANCE: ['Reliance Industries limited', '1235.60'],
+      LT: ['Larsen & Toubro Limited', '1251.00'],
+      ASIANPAINT: ['Asian Paints Limited', '1279.00'],
+      ONGC: ['Oil & Natural Gas Corporation Limited', '179.90'],
+      HINDALCO: ['Hindalco Industries Limited', '244.00']
+
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
