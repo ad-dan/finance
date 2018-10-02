@@ -120,6 +120,7 @@ class App extends Component {
       M: ["Macy's", '35.18'],
       UNP: ['Union Pacific', '164.01'],
       MPC: ['Marathon Petroleum', '81.93'],
+      CSGS: ['CSG Systems International', '38.68']
       NKE: ['Nike Cl B', '85.37'],
 
       RIO: ['Rio Tinto ADR', '51.15'],
