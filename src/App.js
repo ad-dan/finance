@@ -123,7 +123,9 @@ class App extends Component {
       NKE: ['Nike Cl B', '85.37'],
       RIO: ['Rio Tinto ADR', '51.15'],
       TYO: ['Tokyo Stock Exchange', '24.77'],
-      NZE: ['New Zealand Exchange', '0.66']
+      NZE: ['New Zealand Exchange', '0.66'],
+      MSFT: ['Microsoft Corporation', '115.61'],
+      TL0: ['Tesla Inc', '310.345']
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
