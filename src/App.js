@@ -122,6 +122,7 @@ class App extends Component {
       MPC: ['Marathon Petroleum', '81.93'],
       NKE: ['Nike Cl B', '85.37'],
       RIO: ['Rio Tinto ADR', '51.15']
+      FB: ['Facebook Inc', '162.44']
     };
     const users = JSON.parse(localStorage.getItem('users')) || {};
     const database = JSON.parse(localStorage.getItem('database')) || {};
