@@ -123,7 +123,7 @@ class App extends Component {
       NKE: ['Nike Cl B', '85.37'],
 
       RIO: ['Rio Tinto ADR', '51.15'],
-      KBT: ['K3 Business Technology Group','242.50'], //new stocks
+      KBT: ['K3 Business Technology Group','242.50'], 
       K3C: ['K3 Capital Group','291.00'],
       KNOS: ['Kainos Group','425.00'],
       KAPE: ['Kape Technologies','126.50'],
