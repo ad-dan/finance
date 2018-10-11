@@ -13,11 +13,7 @@ import SearchPage from './components/SearchPage';
 import RegPage from './components/RegPage';
 import Assets from './components/Assets';
 import UserNav from './components/UserNav';
-/*
-  TODO:
-    https://www.marketwatch.com/tools/industry/stocklist.asp?bcind_ind=9535&bcind_period=3mo
-    https://www.barchart.com/stocks/top-100-stocks
-*/
+
 class App extends Component {
   constructor() {
     super();
