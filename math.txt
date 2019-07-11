@@ -1,3 +1,0 @@
-num = random()
-
-net = 1 - (e^(-(num^2)))
